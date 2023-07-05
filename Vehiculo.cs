@@ -61,12 +61,12 @@ namespace Lab_Trabajo_Final
         
         public string Fecha()
         {
-            string fecha = d + "/" + m + "/" + y;
+            string fecha = d.ToString("00") + "/" + m.ToString("00") + "/" + y.ToString("0000");
             return fecha;
         }
         public string Hora()
         {
-            string hora = h + ":" + min;
+            string hora = h.ToString("00") + ":" + min.ToString("00");
             return hora;
         }
         public int PesoTotal()

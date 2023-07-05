@@ -24,8 +24,7 @@ namespace Lab_Trabajo_Final
 
         }
 
-        Vehiculo[] vVehiculo = new Vehiculo[20];
-        Vehiculo seleccionado = null;
+        public static Vehiculo[] vVehiculo = new Vehiculo[20];
         int cantMultas = 0;
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -57,8 +56,8 @@ namespace Lab_Trabajo_Final
                     tipo = rBtnFurgoneta.Text;
                 }
                 miVehiculo = new Vehiculo(Convert.ToInt32(tBPatente.Text), tipo, Convert.ToInt32(tBCap.Text),
-                    (int)NUPA.Value, (int)NUPB.Value, (int)NUPC.Value,(int)NUPDay.Value,(int)NUPMonth.Value,
-                    (int)NUPYear.Value,(int)NUPH.Value,(int)NUPMin.Value);
+                    (int)NUPA.Value, (int)NUPB.Value, (int)NUPC.Value, (int)NUPDay.Value, (int)NUPMonth.Value,
+                    (int)NUPYear.Value, (int)NUPH.Value, (int)NUPMin.Value);
                 int diferenciaPeso = miVehiculo.Capacidad - miVehiculo.PesoTotal();
 
 
@@ -112,9 +111,13 @@ namespace Lab_Trabajo_Final
 
                 miVentanita.ShowDialog();
                 miVentanita.Dispose();
-
+                tBPatente.Text = "";
+                tBCap.Text = "";
+                NUPA.Value = 0;
+                NUPB.Value = 0;
+                NUPC.Value = 0;
             }
-            else 
+            else
             {
                 MessageBox.Show("Formulario incompleto");
             }
@@ -123,31 +126,20 @@ namespace Lab_Trabajo_Final
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            Multados multados = new Multados();
+            if (cantMultas > 0)
+            {
+                Ordenar(vVehiculo);
+                for (int i = 0; i < cantMultas; i++)
+                {
+                    multados.lbMultados.Items.Add("Patente: " + vVehiculo[i].Patente);
+                }
+
+            }
+            else
+                multados.groupBox.Text = "LISTA VACIA";
+            multados.ShowDialog();
             Close();
-        }
-
-        private void btnVer_Click(object sender, EventArgs e)
-        {
-            Ordenar(vVehiculo);
-            for (int i = 0; i < cantMultas; i++)
-            {
-                lBMultados.Items.Add("Patente: " + vVehiculo[i].Patente);
-            }
-
-        }
-        private void btnDetalles_Click(object sender, EventArgs e)
-        {
-            int pos = BusqBinaria(vVehiculo, seleccionado.Patente);
-            MessageBox.Show("Fecha registro: " + seleccionado.Fecha() +
-                "\nTipo de vehiculo: " + seleccionado.TipoVehiculo +
-                "\nCosto abonado: " + seleccionado.Abonado);
-        }
-        private void lBMultados_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lBMultados.SelectedIndex > -1)
-            {
-                seleccionado = vVehiculo[lBMultados.SelectedIndex];
-            }
         }
 
         public int BusqBinaria(Vehiculo[] v, int buscado)
@@ -171,14 +163,14 @@ namespace Lab_Trabajo_Final
             return pos;
         }
 
-        public void Ordenar(Vehiculo[]v) 
+        public void Ordenar(Vehiculo[] v)
         {
             Vehiculo aux;
-            for (int i = 0 ; i < cantMultas - 1 ; i++) 
+            for (int i = 0; i < cantMultas - 1; i++)
             {
-                for (int j = 0; j < cantMultas - i - 1; j++) 
+                for (int j = 0; j < cantMultas - i - 1; j++)
                 {
-                    if (v[j].Patente > v[j + 1].Patente) 
+                    if (v[j].Patente > v[j + 1].Patente)
                     {
                         aux = v[j];
                         v[j] = v[j + 1];
@@ -187,14 +179,6 @@ namespace Lab_Trabajo_Final
                 }
             }
         }
-        private void tBPatente_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void tBCap_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

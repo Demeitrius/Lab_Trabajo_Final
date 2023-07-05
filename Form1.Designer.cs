@@ -59,12 +59,8 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.NUPH = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rBtnNoHabil = new System.Windows.Forms.RadioButton();
             this.rBtnHabil = new System.Windows.Forms.RadioButton();
-            this.lBMultados = new System.Windows.Forms.ListBox();
-            this.btnVer = new System.Windows.Forms.Button();
-            this.btnDetalles = new System.Windows.Forms.Button();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.rBtnNoHabil = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.NUPMin)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUPC)).BeginInit();
@@ -80,7 +76,6 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUPH)).BeginInit();
             this.groupBox3.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // NUPMin
@@ -119,7 +114,6 @@
             this.tBPatente.Name = "tBPatente";
             this.tBPatente.Size = new System.Drawing.Size(100, 20);
             this.tBPatente.TabIndex = 4;
-            this.tBPatente.TextChanged += new System.EventHandler(this.tBPatente_TextChanged);
             // 
             // label3
             // 
@@ -390,9 +384,9 @@
             this.rBtnFurgoneta.AutoSize = true;
             this.rBtnFurgoneta.Location = new System.Drawing.Point(6, 42);
             this.rBtnFurgoneta.Name = "rBtnFurgoneta";
-            this.rBtnFurgoneta.Size = new System.Drawing.Size(73, 17);
+            this.rBtnFurgoneta.Size = new System.Drawing.Size(58, 17);
             this.rBtnFurgoneta.TabIndex = 0;
-            this.rBtnFurgoneta.Text = "Furgoneta";
+            this.rBtnFurgoneta.Text = "Furgón";
             this.rBtnFurgoneta.UseVisualStyleBackColor = true;
             // 
             // rBtnCamion
@@ -413,7 +407,6 @@
             this.tBCap.Name = "tBCap";
             this.tBCap.Size = new System.Drawing.Size(100, 20);
             this.tBCap.TabIndex = 6;
-            this.tBCap.TextChanged += new System.EventHandler(this.tBCap_TextChanged);
             // 
             // groupBox4
             // 
@@ -451,74 +444,34 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dia";
             // 
-            // rBtnNoHabil
-            // 
-            this.rBtnNoHabil.AutoSize = true;
-            this.rBtnNoHabil.Checked = true;
-            this.rBtnNoHabil.Location = new System.Drawing.Point(6, 19);
-            this.rBtnNoHabil.Name = "rBtnNoHabil";
-            this.rBtnNoHabil.Size = new System.Drawing.Size(87, 17);
-            this.rBtnNoHabil.TabIndex = 15;
-            this.rBtnNoHabil.TabStop = true;
-            this.rBtnNoHabil.Text = "Dom/Feriado";
-            this.rBtnNoHabil.UseVisualStyleBackColor = true;
-            // 
             // rBtnHabil
             // 
             this.rBtnHabil.AutoSize = true;
-            this.rBtnHabil.Location = new System.Drawing.Point(6, 44);
+            this.rBtnHabil.Checked = true;
+            this.rBtnHabil.Location = new System.Drawing.Point(6, 19);
             this.rBtnHabil.Name = "rBtnHabil";
             this.rBtnHabil.Size = new System.Drawing.Size(49, 17);
             this.rBtnHabil.TabIndex = 16;
+            this.rBtnHabil.TabStop = true;
             this.rBtnHabil.Text = "Habil";
             this.rBtnHabil.UseVisualStyleBackColor = true;
             // 
-            // lBMultados
+            // rBtnNoHabil
             // 
-            this.lBMultados.FormattingEnabled = true;
-            this.lBMultados.Location = new System.Drawing.Point(15, 19);
-            this.lBMultados.Name = "lBMultados";
-            this.lBMultados.Size = new System.Drawing.Size(147, 212);
-            this.lBMultados.TabIndex = 16;
-            this.lBMultados.SelectedIndexChanged += new System.EventHandler(this.lBMultados_SelectedIndexChanged);
-            // 
-            // btnVer
-            // 
-            this.btnVer.Location = new System.Drawing.Point(6, 237);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(75, 23);
-            this.btnVer.TabIndex = 17;
-            this.btnVer.Text = "Ver Multados";
-            this.btnVer.UseVisualStyleBackColor = true;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
-            // 
-            // btnDetalles
-            // 
-            this.btnDetalles.Location = new System.Drawing.Point(87, 237);
-            this.btnDetalles.Name = "btnDetalles";
-            this.btnDetalles.Size = new System.Drawing.Size(75, 23);
-            this.btnDetalles.TabIndex = 18;
-            this.btnDetalles.Text = "Detalles";
-            this.btnDetalles.UseVisualStyleBackColor = true;
-            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.lBMultados);
-            this.groupBox8.Controls.Add(this.btnDetalles);
-            this.groupBox8.Controls.Add(this.btnVer);
-            this.groupBox8.Location = new System.Drawing.Point(510, 12);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(173, 276);
-            this.groupBox8.TabIndex = 19;
-            this.groupBox8.TabStop = false;
+            this.rBtnNoHabil.AutoSize = true;
+            this.rBtnNoHabil.Location = new System.Drawing.Point(6, 42);
+            this.rBtnNoHabil.Name = "rBtnNoHabil";
+            this.rBtnNoHabil.Size = new System.Drawing.Size(87, 17);
+            this.rBtnNoHabil.TabIndex = 15;
+            this.rBtnNoHabil.Text = "Dom/Feriado";
+            this.rBtnNoHabil.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 297);
-            this.Controls.Add(this.groupBox8);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(507, 292);
             this.Controls.Add(this.groupBox2);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -544,7 +497,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.NUPH)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -562,7 +514,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rBtnHabil;
-        private System.Windows.Forms.RadioButton rBtnNoHabil;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.RadioButton rBtnFurgoneta;
         private System.Windows.Forms.RadioButton rBtnCamion;
@@ -583,10 +534,7 @@
         private System.Windows.Forms.NumericUpDown NUPYear;
         private System.Windows.Forms.NumericUpDown NUPMonth;
         private System.Windows.Forms.NumericUpDown NUPDay;
-        private System.Windows.Forms.ListBox lBMultados;
-        private System.Windows.Forms.Button btnVer;
-        private System.Windows.Forms.Button btnDetalles;
-        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.RadioButton rBtnNoHabil;
     }
 }
 
